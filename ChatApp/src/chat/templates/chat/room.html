@@ -133,7 +133,7 @@
           for (let i=0; i<data['messages'].length; i++) {
             createMessage(data['messages'][i]);
           }
-        } else if (data['command'] === 'new_messages'){
+        } else if (data['command'] === 'new_message'){
           createMessage(data['message']);
         }
     };
@@ -152,7 +152,7 @@
         var messageInputDom = document.getElementById('chat-message-input');
         var message = messageInputDom.value;
         chatSocket.send(JSON.stringify({
-            'command': 'new_messages',
+            'command': 'new_message',
             'message': message,
             'from': username
         }));
